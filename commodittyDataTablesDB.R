@@ -15,7 +15,8 @@ commodittyDataTablesDB=function(RIC,SDate){
   
   startSimsTime=Sys.time()
   
-  
+  cat("\f")
+  print(paste0("Processing future market price information for ",RIC,"..."))
   # Future prices and returns Refintiv:
   
   RICS=dbGetQuery(connComm,"SELECT * FROM RIC")
