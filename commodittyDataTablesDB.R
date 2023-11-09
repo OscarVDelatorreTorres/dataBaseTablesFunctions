@@ -46,6 +46,9 @@ commodittyDataTablesDB=function(RIC,SDate){
     datos$Volume[naRows]=0
   }
   
+  cat("\f")
+  print(paste0("Processing financialmarket factor information for ",RIC,"..."))
+  
   # DXY data:
   
   datosIndex=dbGetQuery(connIndex,
@@ -129,6 +132,8 @@ commodittyDataTablesDB=function(RIC,SDate){
   datos$especRatio=na.locf(datos$especRatio)
   # Enefermedades infecciosas:
   
+  cat("\f")
+  print(paste0("Processing behavioral factor information for ",RIC,"..."))
   
   INFECTDISEMVTRACK=fredr(
     series_id = "INFECTDISEMVTRACKD",
@@ -242,6 +247,9 @@ commodittyDataTablesDB=function(RIC,SDate){
   datos$DXY=datos$DXY-(datos$TBILL/100)
   datos$commIndex=datos$commIndex-(datos$TBILL/100)
   
+  cat("\f")
+  print(paste0("Storing data in database for ",RIC,"..."))
+  
   # Daily data table writting====
   
   # Writes the prices in the data base:
@@ -294,6 +302,7 @@ commodittyDataTablesDB=function(RIC,SDate){
   dbDisconnect(connComm)
   dbDisconnect(connIndex)
   
-  print(paste0("Daily and weekly data updates in "))
+  cat("\f")
+  print(paste0("Databases updated for ",RIC,"..."))
   #Function ends here:  
 }
