@@ -1,5 +1,5 @@
 
-commodittyDataTablesDB=function(RIC,SDate){
+commodittyDataTablesDB=function(RIC,SDate,fileName){
   startDate=SDate
   RICdb=RIC
   rutaBD="/Users/oscardelatorretorres/Dropbox/01 TRABAJO/27basesDatosInvestigacion/02simulacionesMS/01commoditties/"
@@ -288,9 +288,9 @@ commodittyDataTablesDB=function(RIC,SDate){
   
   # Writes the excel output tables:
   # Daily data
-  write.xlsx(datosDB,paste0(rutaBD,"excelOutputs/wtiDailyData1.xls"))
+  write.xlsx(datosDB,paste0(rutaBD,"excelOutputs/",fileName))
   #Weekly data:
-  write.xlsx(datosDBW,paste0(rutaBD,"excelOutputs/wtiWeeklyData1.xls"))
+  write.xlsx(datosDBW,paste0(rutaBD,"excelOutputs/",fileName))
   
   # DB datatableRecord====
   
