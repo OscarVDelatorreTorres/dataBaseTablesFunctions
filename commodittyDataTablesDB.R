@@ -288,9 +288,9 @@ commodittyDataTablesDB=function(RIC,SDate,fileName){
   
   # Writes the excel output tables:
   # Daily data
-  write.xlsx(datosDB,paste0(rutaBD,"excelOutputs/",fileName))
+  write.xlsx(datosDB,paste0(rutaBD,"excelOutputs/",fileName,"D.xlsx"))
   #Weekly data:
-  write.xlsx(datosDBW,paste0(rutaBD,"excelOutputs/",fileName))
+  write.xlsx(datosDBW,paste0(rutaBD,"excelOutputs/",fileName,"W.xlsx"))
   
   # DB datatableRecord====
   
