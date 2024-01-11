@@ -1,9 +1,9 @@
 
-commodittyDataTablesDB=function(RIC,SDate,fileName){
+commodittyDataTablesDB=function(RIC,SDate,fileName,outFolder){
   startDate=SDate
   RICdb=RIC
   rutaBD="/Users/oscardelatorretorres/Dropbox/01 TRABAJO/27basesDatosInvestigacion/02simulacionesMS/01commoditties/"
-  rutaBD2="/Users/oscardelatorretorres/Dropbox/01 TRABAJO/27basesDatosInvestigacion/01precios/02futures/01agricultural/"
+  rutaBD2=paste0("/Users/oscardelatorretorres/Dropbox/01 TRABAJO/27basesDatosInvestigacion/01precios/02futures/",outFolder,"/")
   rutaBD3="/Users/oscardelatorretorres/Dropbox/01 TRABAJO/27basesDatosInvestigacion/01precios/01equity/"
   connPrecios <- dbConnect(RSQLite::SQLite(), paste0(rutaBD,"wtiSims.db"))
   connComm <- dbConnect(RSQLite::SQLite(), paste0(rutaBD2,"commodityFutures.db"))  
